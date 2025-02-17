@@ -53,7 +53,10 @@ function App() {
                 <Route path="/gallery" element={<Gallery />} />
                 <Route path="/contact" element={<Contact />} />
                 <Route path="/location" element={<Location />} />
-                <Route path="/secure-dashboard-azrilcoffey-2024/auth" element={<AdminLogin />} />
+                <Route 
+                  path="/secure-dashboard-azrilcoffey-2024/auth" 
+                  element={<AdminLogin />} 
+                />
                 <Route
                   path="/admin/*"
                   element={

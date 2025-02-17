@@ -8,29 +8,24 @@ export default defineConfig({
     exclude: ['lucide-react'],
   },
   server: {
-    port: 5173,
-    proxy: {
-      '/api': {
-        target: 'http://localhost:3000',
-        changeOrigin: true,
-        secure: false,
-      },
-    },
-    middleware: [
-      (req, res, next) => {
-        // Security headers
-        res.setHeader('X-Frame-Options', 'DENY');
-        res.setHeader('X-Content-Type-Options', 'nosniff');
-        res.setHeader('Referrer-Policy', 'same-origin');
-        res.setHeader('X-XSS-Protection', '1; mode=block');
-        res.setHeader('Strict-Transport-Security', 'max-age=31536000; includeSubDomains');
-        next();
-      },
-    ],
+    port: 8000,
+    host: true, // Mengizinkan akses dari IP network
+    strictPort: true, // Memastikan menggunakan port yang ditentukan
+    headers: {
+      // Security headers
+      'X-Frame-Options': 'DENY',
+      'X-Content-Type-Options': 'nosniff',
+      'Referrer-Policy': 'same-origin',
+      'X-XSS-Protection': '1; mode=block',
+      'Strict-Transport-Security': 'max-age=31536000; includeSubDomains'
+    }
   },
   // CORS configuration
   cors: {
-    origin: ['http://localhost:5173'], // Hanya izinkan origin yang spesifik
+    origin: [
+      'http://localhost:8000',
+      'http://192.168.1.6:8000'
+    ],
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     credentials: true
   }

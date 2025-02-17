@@ -17,7 +17,7 @@ export const ProtectedRoute = ({ children }: { children: React.ReactNode }) => {
   // Cek apakah user login dan adalah admin
   if (!user || !isAdmin(user)) {
     // Redirect ke login dengan menyimpan intended URL
-    return <Navigate to="/admin/login" state={{ from: location }} replace />;
+    return <Navigate to="/secure-dashboard-azrilcoffey-2024/auth" state={{ from: location }} replace />;
   }
 
   return <>{children}</>;

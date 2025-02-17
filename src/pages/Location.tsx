@@ -48,11 +48,26 @@ const Location = () => {
             </div>
           </div>
 
-          {/* Map Section */}
-          <div className="h-[400px] bg-gray-200 rounded-lg shadow-md">
-            {/* Add your map component here */}
-            <div className="w-full h-full flex items-center justify-center text-gray-500">
-              Map will be displayed here
+          {/* Map Section - Using Local Static Image */}
+          <div className="h-[400px] rounded-lg shadow-md overflow-hidden bg-coffee-light">
+            <div className="w-full h-full relative p-4">
+              <div className="absolute inset-0 bg-coffee-dark/5 backdrop-blur-sm"></div>
+              <div className="relative h-full flex flex-col items-center justify-center text-center p-6">
+                <MapPin className="h-12 w-12 text-coffee mb-4" />
+                <h3 className="text-xl font-serif text-coffee-dark mb-2">Visit Our Coffee Shop</h3>
+                <p className="text-gray-600">
+                  123 Coffee Street, Central Jakarta<br />
+                  Indonesia 10110
+                </p>
+                <a 
+                  href="https://maps.google.com/?q=Central+Jakarta+Indonesia" 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-4 px-6 py-2 bg-coffee text-white rounded-full hover:bg-coffee-dark transition-colors"
+                >
+                  Get Directions
+                </a>
+              </div>
             </div>
           </div>
         </div>
